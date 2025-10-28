@@ -288,7 +288,7 @@ footer {
 }
 
 /* === 🔹 ADAPTACIÓN SUAVE A CELULAR (SIN CAMBIAR DISEÑO) === */
-@media (max-width: 500px) {
+@media (max-width: 200px) {
     html {
         zoom: 0.8; /* Escala general en celulares */
     }
@@ -307,7 +307,7 @@ footer {
     }
 
     .content-block {
-        width: 50%;
+        width: 100%;
     }
 
     iframe {
@@ -315,4 +315,5 @@ footer {
         height: auto !important;
     }
 }
+
 
