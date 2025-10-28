@@ -21,6 +21,8 @@ body {
     100% { background-position: 100% 50%; }
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
+
 header {
     position: relative;
     background-color: #333;
@@ -29,11 +31,14 @@ header {
     text-align: center;
     overflow: hidden;
     width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 header h1 {
-    font-size: 3rem;
-    margin-bottom: 0.5rem;
+    font-size: 2.5rem;
+    margin: 0.5rem;
     text-shadow: 0 0 5px #0ff, 0 0 10px #0ff, 0 0 15px #0ff;
     animation: glitch 2s infinite;
 }
@@ -52,12 +57,11 @@ nav ul {
     list-style: none;
     display: flex;
     justify-content: center;
-    flex-direction: column; /* Cambia a columna en pantallas pequeñas */
-    align-items: center; /* Centra los items en la columna */
+    flex-wrap: wrap;
 }
 
 nav ul li {
-    margin: 0.5rem 0; /* Reduce el margen y lo aplica arriba y abajo */
+    margin: 0.5rem 1rem;
 }
 
 nav a {
@@ -69,9 +73,6 @@ nav a {
     border: 2px solid #0f0;
     border-radius: 5px;
     transition: all 0.3s ease;
-    display: block; /* Asegura que el enlace ocupe todo el ancho */
-    width: 100%; /* Ocupa todo el ancho del li */
-    text-align: center; /* Centra el texto dentro del enlace */
 }
 
 nav a:hover {
@@ -80,21 +81,8 @@ nav a:hover {
     text-shadow: 0 0 5px #0f0, 0 0 10px #0f0;
 }
 
-.hero-content h2 {
-    font-size: 2rem;
-}
-
-.hero-content p {
-    font-size: 1.5rem;
-}
-
-.hero-content a {
-    font-size: 1.5rem;
-}
-
-/* --- Bloques y layout --- */
 .main-content-wrapper {
-    flex: 1; /* Permite que el contenido principal crezca y empuje el footer hacia abajo */
+    flex: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -114,8 +102,8 @@ nav a:hover {
 }
 
 .content-block h2 {
-    font-size: 2.5rem;
-    margin-bottom: 1.5rem;
+    font-size: 2rem;
+    margin-bottom: 1rem;
     color: #0ff;
     text-shadow: 0 0 5px #0ff, 0 0 10px #0ff;
     text-align: center;
@@ -123,33 +111,34 @@ nav a:hover {
 
 .layout-container {
     display: flex;
-    flex-direction: column; /* Cambia a columna en pantallas pequeñas */
     justify-content: space-between;
     align-items: center;
     padding: 20px;
+    flex-wrap: wrap;
 }
 
 .text-area {
     flex: 1;
-    padding-right: 0; /* Elimina el padding en pantallas pequeñas */
+    padding-right: 20px;
     text-align: left;
-    width: 100%; /* Ocupa todo el ancho */
+    min-width: 250px;
 }
 
 .text-area p {
-    font-size: 1.2em;
-    line-height: 1.6;
+    font-size: 1em;
+    line-height: 1.5;
     margin-bottom: 15px;
 }
 
 .image-area {
     flex: 1;
-    text-align: center; /* Centra la imagen */
-    width: 100%; /* Ocupa todo el ancho */
+    text-align: center;
+    min-width: 250px;
+    margin-top: 20px;
 }
 
 .image-area img {
-    max-width: 90%;
+    max-width: 100%;
     height: auto;
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(0, 255, 0, 0.4);
@@ -165,14 +154,14 @@ table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
+    word-wrap: break-word;
 }
 
-th,
-td {
-    border: 2.5px solid #B0C4DE;
-    padding: 1rem;
-    text-align: left;
+th, td {
+    border: 2px solid #B0C4DE;
+    padding: 0.8rem;
     font-size: 0.8rem;
+    text-align: left;
 }
 
 th {
@@ -180,36 +169,22 @@ th {
     color: #fff;
 }
 
-/* --- Formulario (base original) --- */
-.form-group {
-    margin-bottom: 20px;
+/* Formulario */
+#contactForm {
+    margin: 40px auto;
     text-align: left;
+    background-color: #111;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 12px rgba(0, 255, 255, 0.25);
+    max-width: 600px;
+    width: 90%;
+    border: 2px solid #00ffff;
 }
 
-label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 5px;
-    color: #f0f0f0;
-}
-
-input[type="text"],
-input[type="email"],
-input[type="tel"],
-textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #0f0;
-    border-radius: 5px;
-    background-color: #333;
-    color: #f0f0f0;
-    font-family: 'Roboto Mono', monospace;
-    font-size: 1em;
-}
-
-button {
-    padding: 1rem 2rem;
-    margin-top: 2rem;
+#contactForm button {
+    padding: 0.8rem 1.2rem;
+    margin-top: 1.5rem;
     background-color: #00bcd4;
     color: #121212;
     border: none;
@@ -219,28 +194,30 @@ button {
     transition: all 0.3s ease;
 }
 
-button:hover {
+#contactForm button:hover {
     background-color: #00acc1;
     box-shadow: 0 0 10px #00bcd4;
 }
 
+/* Botones de navegación */
 .nav-buttons {
     display: flex;
     justify-content: space-between;
-    margin-top: 30px;
+    margin-top: 20px;
+    flex-wrap: wrap;
 }
 
 .back-button,
 .next-button {
-    padding: 10px 25px;
-    font-size: 1em;
+    padding: 10px 20px;
+    font-size: 0.9rem;
     border: none;
-    border-radius: 8px;
+    border-radius: 5px;
     cursor: pointer;
-    box-shadow: 0 0 10px #00ffff;
-    transition: transform 0.3s, background-color 0.3s;
-    text-decoration: none;
     font-weight: bold;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    margin: 5px;
 }
 
 .back-button {
@@ -251,7 +228,6 @@ button:hover {
 .back-button:hover {
     background-color: #00ffff;
     color: #000;
-    transform: scale(1.1);
 }
 
 .next-button {
@@ -262,10 +238,9 @@ button:hover {
 .next-button:hover {
     background-color: #ff00ff;
     color: #fff;
-    transform: scale(1.1);
 }
 
-/* --- Video --- */
+/* Video */
 .video-container {
     position: relative;
     padding-bottom: 56.25%;
@@ -282,155 +257,7 @@ button:hover {
     height: 100%;
 }
 
-.content h2 {
-    color: #000000;
-}
-
-.content p {
-    color: #000000;
-}
-
-/* === NUEVOS ESTILOS para el FORMULARIO AVANZADO === */
-#contactForm {
-    margin: 40px auto;
-    /* Centrado en pantalla */
-    text-align: left;
-    background-color: #111;
-    padding: 25px 30px;
-    border-radius: 12px;
-    box-shadow: 0 0 12px rgba(0, 255, 255, 0.25);
-    max-width: 600px;
-    /* 馃敼 M谩s corto: ajusta ancho del formulario */
-    width: 90%;
-    border: 2px solid #00ffff;
-    /* 馃敼 Borde ne贸n visible pero m谩s controlado */
-}
-
-#contactForm button {
-    padding: 0.8rem 1.2rem;
-    margin-top: 2rem;
-    background-color: #00bcd4;
-    /* Azul ne贸n */
-    color: #121212;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: all 0.3s ease;
-}
-
-#savedTable {
-    width: 80%;
-    border-collapse: collapse;
-    margin: 40px auto;
-    /* Centrado en pantalla */
-    background-color: #1a1a1a;
-    max-width: 600px;
-    /*  Hace el formulario más corto (ancho máximo) */
-    width: 90%;
-    /* Asegura que se adapte a pantallas pequeñas */
-}
-
-#savedTable th,
-#savedTable td {
-    border: 1px solid #444;
-    padding: 10px;
-    color: #f0f0f0;
-    text-align: left;
-}
-
-#savedTable th {
-    background-color: #00bcd4;
-    color: #000;
-}
-
-/* Estilos para el contenedor de los botones de navegación */
-.nav-buttons {
-    display: flex;
-    justify-content: space-between;
-    /* Distribuye los elementos con espacio entre ellos */
-    align-items: center;
-    /* Alinea los botones verticalmente (opcional) */
-    width: 100%;
-    /* Asegura que el contenedor ocupe todo el ancho disponible */
-    padding: 10px;
-    /* Añade un poco de espacio alrededor de los botones (opcional) */
-    max-width: 900px;
-    /* Para alinear con el contenido principal */
-    margin: 0 auto;
-    /* Centra el contenedor horizontalmente */
-}
-
-/* Estilo del bot贸n Regresar */
-.back-button {
-    background-color: #ff00ff;
-    color: #fff;
-    padding: 10px 20px;
-    /* Añade espacio alrededor del texto del botón */
-    border-radius: 5px;
-    /* Añade bordes redondeados */
-    text-decoration: none;
-    /* Elimina el subrayado */
-}
-
-.back-button:hover {
-    background-color: #00ffff;
-    color: #000;
-    transform: scale(1.1);
-}
-
-/* Estilo del botón Siguiente */
-.next-button {
-    background-color: #00ffff;
-    color: #000;
-    padding: 10px 20px;
-    /* Añade espacio alrededor del texto del botón */
-    border-radius: 5px;
-    /* Añade bordes redondeados */
-    text-decoration: none;
-    /* Elimina el subrayado */
-}
-
-.next-button:hover {
-    background-color: #ff00ff;
-    color: #fff;
-    transform: scale(1.1);
-}
-
-/* Ajuste visual para exportación a PDF */
-#contactForm {
-    transform-origin: top center;
-    /* Asegura que el escalado sea desde arriba */
-}
-
-.pdf-scale {
-    transform: scale(0.8);
-    /*  Reduce un poco el tamaño del formulario al exportar */
-}
-
-/* ==== Navegación activa ==== */
-nav ul li a {
-    text-decoration: none;
-    color: white;
-    padding: 10px 15px;
-    transition: 0.3s;
-}
-
-nav ul li a:hover {
-    background-color: #444;
-    border-radius: 5px;
-}
-
-/* Enlace activo (página actual) */
-nav ul li a.active {
-    background-color: #00aaff;
-    /* color resaltado */
-    color: #fff;
-    border-radius: 5px;
-    font-weight: bold;
-}
-
-/* Pie de página con estilo de terminal */
+/* Footer */
 footer {
     text-align: center;
     padding: 1.5rem 0;
@@ -439,126 +266,56 @@ footer {
     border-top: 2px solid #0f0;
 }
 
-/* Media query para pantallas más pequeñas (móviles) */
+/* === Responsive Celular === */
 @media (max-width: 768px) {
+    header {
+        flex-direction: column;
+    }
     header h1 {
-        font-size: 2rem; /* Reduce el tamaño del título */
-    }
-
-    nav ul {
-        flex-direction: column; /* Apila los elementos del menú */
-        text-align: center; /* Centra el texto */
-    }
-
-    nav ul li {
-        margin: 0.5rem 0; /* Reduce el margen */
+        font-size: 1.8rem;
+        margin: 5px 0;
     }
 
     .layout-container {
-        flex-direction: column; /* Apila los bloques de texto e imagen */
+        flex-direction: column;
+        text-align: center;
     }
 
-    .text-area,
+    .text-area, .image-area {
+        width: 100%;
+        padding: 0;
+    }
+
     .image-area {
-        width: 100%; /* Ocupan el 100% del ancho */
-        padding: 0; /* Elimina el padding */
-        text-align: center; /* Centra el contenido */
+        margin-top: 15px;
     }
 
-    .image-area img {
-        max-width: 100%; /* Asegura que la imagen no se salga del contenedor */
+    .content-block h2 {
+        font-size: 1.8rem;
+    }
+
+    .text-area p {
+        font-size: 0.95rem;
+    }
+
+    th, td {
+        font-size: 0.75rem;
+        padding: 0.5rem;
+    }
+
+    #contactForm {
+        width: 95%;
+        padding: 15px;
     }
 
     .nav-buttons {
-        flex-direction: column; /* Apila los botones */
-        align-items: center; /* Centra los botones */
+        flex-direction: row;
+        justify-content: space-around;
+        flex-wrap: wrap;
     }
 
-    .nav-buttons a {
-        margin: 0.5rem 0; /* Añade margen entre los botones */
-        width: 80%; /* Ancho para que no sean demasiado grandes */
-        text-align: center; /* Centra el texto en los botones */
-    }
-}
-
-/*  Estilos para las tarjetas  */
-.card-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    padding: 20px;
-}
-
-.card {
-    background-color: #212121;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-    border-radius: 15px;
-    margin-bottom: 30px;
-    overflow: hidden;
-    width: calc(50% - 20px); /* Dos tarjetas por fila, con margen entre ellas */
-}
-
-.card img {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
-.card-content {
-    padding: 20px;
-    text-align: left;
-}
-
-.card-content h3 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-    color: #0ff;
-}
-
-.card-content p {
-    font-size: 1.1em;
-    line-height: 1.4;
-    color: #f0f0f0;
-}
-
-.card-content a {
-    color: #0f0;
-    text-decoration: none;
-    font-weight: bold;
-    padding: 0.5rem 1rem;
-    border: 2px solid #0f0;
-    border-radius: 5px;
-    transition: all 0.3s ease;
-    display: inline-block;
-}
-
-.card-content a:hover {
-    background-color: #0f0;
-    color: #121212;
-}
-
-/* Media query para pantallas más pequeñas (móviles) */
-@media (max-width: 768px) {
-    .card-container {
-        flex-direction: column;
-        padding: 10px;
-    }
-
-    .card {
-        width: 100%;
-        margin-bottom: 20px;
-    }
-
-    .card-content h3 {
-        font-size: 1.3rem;
-    }
-
-    .card-content p {
-        font-size: 1em;
-    }
-
-    .card-content a {
+    .back-button, .next-button {
+        width: 45%;
         font-size: 0.9rem;
-        padding: 0.4rem 0.8rem;
     }
 }
