@@ -307,7 +307,7 @@ footer {
     }
 
     .content-block {
-        width: 100%;
+        width: 300%;
     }
 
     iframe {
@@ -315,5 +315,6 @@ footer {
         height: auto !important;
     }
 }
+
 
 
